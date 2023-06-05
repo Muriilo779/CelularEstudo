@@ -1,8 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-
-//toqueDuplo();
-
-//arrastando();
-
-mudaEscala();
+/*
+xDif = event_data [? "diffX"];
+yDif = event_data[? "diffY"];
+x += xDif;
+y  += yDif;
