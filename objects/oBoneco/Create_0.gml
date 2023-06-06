@@ -1,20 +1,19 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+vel = 5;
 //Criando um metodo de clique duplo sem utilizar gestures 
-
 toqueDuplo = function () 
 {
-	var toqueDuplo = device_mouse_check_button_pressed(0, mb_right)	;
+	var toqueDuploBotao = device_mouse_check_button_pressed(0, mb_right)	;
 	
-	if(toqueDuplo)
+	if(toqueDuploBotao)
 	{
 		show_message_async("Testando o toque duplo na tela");
 	}
 }
 
 //Criando um metodo de arrastar sem utilizar gestures 
-
 arrastando = function () 
 {
 	
@@ -81,6 +80,36 @@ mudaEscala = function ()
 		distanciaInicial = 0;
 		//Atualizandol a minha escala 
 		escala = image_xscale;
+	}
+	
+}
+
+//Criando um metodo para girar a cara do personagem sem gesture
+mudaAngulo = function()
+{
+	var toque2 = device_mouse_check_button(1, mb_left);
+	var x1 = device_mouse_x(0), y1 = device_mouse_y(0);
+	var x2 = device_mouse_x(1), y2 = device_mouse_y(1);
+	
+	if(toque2)
+	{
+		var _direction = point_direction(x1, y1, x2, y2);
+		image_angle = _direction;
+	}
+
+	
+}
+
+//Criando um metodo para aumentar ou diminuir a velocidade com base no angulo do meu celular
+movimentoInclina = function()
+{
+	
+	//Checando se a orientação está correta 
+	if(display_get_orientation() == display_landscape)
+	{
+		//Eu quero que ele se mova com base no tilt (inclinacao do celular)  
+		var valor = device_get_tilt_y();
+		x += valor * vel;
 	}
 	
 }

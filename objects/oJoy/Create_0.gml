@@ -1,12 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-
-//toqueDuplo();
-
-//arrastando();
-
-//mudaEscala();
-
-//mudaAngulo();
-
-movimentoInclina();
+vel = 0; 
+dir = 0;
